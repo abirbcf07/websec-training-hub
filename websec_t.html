@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b11">
+<title>SY3D // Web Security Training Hub</title>
+<style>
+:root{--bg:#080b11;--panel:#101722;--panel2:#141e2b;--line:#263446;--txt:#e8eef6;--muted:#9aabba;--cyan:#48dfff;--green:#64e6ad;--amber:#ffc36b;--red:#ff7185}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0%,#102335 0,transparent 30rem),var(--bg);color:var(--txt);font:15px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}button{font:inherit;cursor:pointer}
+header{padding:42px max(22px,calc((100% - 1120px)/2)) 28px;border-bottom:1px solid var(--line)}
+.brand{color:var(--cyan);font-weight:800;letter-spacing:2px;font-size:12px}h1{font-size:clamp(34px,6vw,62px);line-height:1.03;margin:12px 0;letter-spacing:-2px}header p{color:var(--muted);max-width:760px;margin:0}
+nav{position:sticky;top:0;z-index:5;background:#080b11ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px max(16px,calc((100% - 1120px)/2));display:flex;gap:16px;overflow:auto;white-space:nowrap}
+nav a{font-size:13px;color:var(--muted)}main{max-width:1120px;margin:auto;padding:20px 18px 70px}
+section{margin:34px 0;scroll-margin-top:70px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}h2{font-size:25px;margin:0}h3{margin:0 0 5px;font-size:17px}.muted,.desc{color:var(--muted)}.desc{font-size:13px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card,.module,.week{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:15px;padding:17px}
+.stat strong{display:block;font-size:26px}.stat span{color:var(--muted);font-size:12px}
+.progressbox{background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:15px}
+.bar{height:9px;background:#263446;border-radius:99px;overflow:hidden;margin:10px 0}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .2s}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}button,.button{border:1px solid var(--line);background:#172333;color:var(--txt);padding:8px 12px;border-radius:9px;font-size:13px}.primary{background:var(--cyan);color:#03121a;border-color:var(--cyan);font-weight:700}
+.resource{display:flex;flex-direction:column;gap:6px}.resource p{font-size:13px;color:var(--muted);margin:0}.tag{display:inline-block;border:1px solid #31516a;color:#bdefff;border-radius:99px;padding:2px 8px;font-size:11px;width:max-content}
+.module{padding:0;overflow:hidden}.module summary{padding:16px;cursor:pointer;display:flex;align-items:center;gap:12px;list-style:none}.module summary::-webkit-details-marker{display:none}.num{background:#16384a;color:var(--cyan);font-weight:800;border-radius:9px;padding:7px 10px}.module summary .desc{flex:1}.modulebody{padding:0 16px 16px;border-top:1px solid var(--line)}.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin-top:13px}.check{display:flex;gap:9px;align-items:flex-start;background:#ffffff06;border:1px solid #ffffff0d;border-radius:9px;padding:9px;font-size:13px}.check input{margin-top:4px;accent-color:#56e4ae}.tools{margin-top:12px;color:var(--muted);font-size:12px}
+.week{padding:14px}.weekhead{display:flex;gap:10px;align-items:center}.weekhead b{color:var(--cyan)}.week p{margin:8px 0;color:var(--muted);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{text-align:left;padding:10px;border-bottom:1px solid var(--line)}th{color:var(--cyan)}
+.note{border-left:3px solid var(--amber);background:#ffc36b10;padding:12px 14px;border-radius:8px;color:#e9d6b7;font-size:13px}
+.check label{flex:1;cursor:pointer}.learn{font-size:11px;white-space:nowrap;border:1px solid #31516a;border-radius:99px;padding:1px 9px;align-self:center}
+.start{margin-top:13px;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px}.start b{color:var(--green)}
+footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:600px){header{padding-top:30px}.sectionhead{display:block}.sectionhead .muted{margin-top:5px}table{font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">SY3D // OBSCURA X · PERSONAL LEARNING TRACKER</div>
+  <h1>WEB SECURITY<br><span style="color:var(--cyan)">TRAINING HUB</span></h1>
+  <p>A self-paced, 40-week path from web-security fundamentals to practical web and API penetration testing. Free learning resources, legal practice labs, module checklists and saved progress — all in one file.</p>
+  <div class="actions"><a class="button primary" href="#roadmap">Start the roadmap ↓</a><a class="button" href="#resources">Open free resources</a></div>
+</header>
+<nav>
+<a href="#dashboard">Progress</a><a href="#roadmap">40-week plan</a><a href="#modules">16 modules</a><a href="#advanced">Advanced topics</a><a href="#resources">Resources</a><a href="#routine">Weekly routine</a><a href="#final">Final assessment</a>
+</nav>
+<main>
+<section id="dashboard">
+ <div class="sectionhead"><h2>Learning dashboard</h2><span class="muted">Your progress saves in this browser on this device.</span></div>
+ <div class="grid">
+  <div class="card stat"><strong id="doneCount">0</strong><span>Topics completed</span></div>
+  <div class="card stat"><strong id="totalCount">0</strong><span>Total checklist items</span></div>
+  <div class="card stat"><strong id="percent">0%</strong><span>Overall completion</span></div>
+ </div>
+ <div class="progressbox" style="margin-top:12px"><b>Overall progress</b><div class="bar"><i id="progressBar"></i></div><span class="muted" id="progressText">Start with Module 01. Tick topics as you complete them.</span>
+ <div class="actions"><button onclick="exportProgress()">Export progress backup</button><button onclick="document.getElementById('importFile').click()">Import progress backup</button><button onclick="resetProgress()">Reset all progress</button><input id="importFile" type="file" accept="application/json" hidden onchange="importProgress(event)"></div>
+ </div>
+</section>
+
+<section id="roadmap">
+ <div class="sectionhead"><h2>40-week learning roadmap</h2><span class="muted">A target, not a deadline. Repeat weeks when needed.</span></div>
+ <div class="grid" id="weeks"></div>
+</section>
+
+<section id="modules">
+ <div class="sectionhead"><h2>Complete syllabus · 16 modules</h2><span class="muted">Expand a module, open each topic's Learn ↗ link, then tick it when done.</span></div>
+ <div id="moduleList" style="display:grid;gap:10px"></div>
+</section>
+
+<section id="advanced">
+ <div class="sectionhead"><h2>Advanced vulnerability checklist</h2><span class="muted">Each links to its PortSwigger/OWASP lesson (with labs where available).</span></div>
+ <div class="module"><div class="modulebody" style="border:0;padding-top:14px"><div class="checks" id="advancedList"></div></div></div>
+</section>
+
+<section id="resources">
+ <div class="sectionhead"><h2>Free learning resources & useful links</h2><span class="muted">Links open the official project or documentation websites.</span></div>
+ <div class="grid" id="resourceList"></div>
+ <p class="note" style="margin-top:14px">Free does not always mean open source. PortSwigger Academy is a free training platform; Juice Shop, WebGoat, ZAP and crAPI are open-source training projects/tools. Some tools have paid editions, but you can begin with free/community features.</p>
+</section>
+
+<section id="routine">
+ <div class="sectionhead"><h2>Weekly routine</h2><span class="muted">Flexible around rotating day/night shifts.</span></div>
+ <div class="card">
+ <table><thead><tr><th>Session</th><th>What to do</th><th>Time</th></tr></thead><tbody>
+ <tr><td>1</td><td>Learn one new concept; use official docs or a lesson</td><td>30 min</td></tr>
+ <tr><td>2</td><td>Continue theory and write notes in your own words</td><td>30 min</td></tr>
+ <tr><td>3</td><td>Watch/read a practical demonstration</td><td>30 min</td></tr>
+ <tr><td>4</td><td>Complete a legal hands-on lab yourself</td><td>60 min</td></tr>
+ <tr><td>5</td><td>Repeat, troubleshoot and document what you found</td><td>60 min</td></tr>
+ </tbody></table>
+ <p class="muted" style="font-size:13px;margin:12px 0 0">Target: about 5 hours per week. If work is exhausting, rest and continue later. Consistency beats burnout.</p>
+ </div>
+</section>
+
+<section id="final">
+ <div class="sectionhead"><h2>Final assessment & portfolio</h2></div>
+ <div class="card">
+ <h3>Before calling the course complete</h3>
+ <div class="checks" id="finalList"></div>
+ <p class="note" style="margin-top:14px">Only test applications you own or have explicit permission to assess. Use intentionally vulnerable labs for practice; never scan random public systems.</p>
+ </div>
+</section>
+</main>
+<footer>SY3D // WEBSEC TRAINING HUB · Standalone HTML · Progress is stored locally in this browser</footer>
+<script>
+const modules=[
+["01","Fundamentals","Core security concepts and the language of VAPT.",["What is a vulnerability?","Advantages and disadvantages of vulnerability management","What is an exploit?","Vulnerability vs exploit","What is VAPT?","Why organizations need VAPT","Scope and importance in industry","Real-world VAPT scenarios","Industry standards: ISO 27001, PCI DSS and HIPAA (overview)","What is vulnerability assessment (VA)?","Types of VA","Vulnerability scanning","Key features, advantages and limitations","Steps in VA","What is penetration testing?","Who are penetration testers?","Types of penetration testing","Manual vs automated testing","VA vs penetration testing","VAPT vs bug bounty","Web application pentesting","API pentesting","Network pentesting","Internal vs external pentesting"]],
+["02","Web Application Architecture","Understand how modern web applications work.",["Web application architecture","How web applications work","Client-side architecture","Server-side architecture","HTTP request/response flow","Application components","Databases and backend services","Understanding the attack surface"]],
+["03","Reconnaissance","Identify and map an application's exposed attack surface.",["Types of reconnaissance","Passive reconnaissance techniques","Active reconnaissance techniques","Recon tools and methods","Asset discovery","Technology identification","Endpoint and parameter discovery"]],
+["04","Vulnerability Assessment","Build a repeatable assessment methodology.",["Step-by-step VA methodology","Scanning workflow","Finding collection","Validation and prioritization","Reporting assessment results"],["Tools: Acunetix (commercial), Qualys (commercial), Wapiti, Akto, RapidScan, Nettacker, Sitadel, Fagun18, WebPwn3r, OWASP ZAP, Nessus (commercial), and alternatives"]],
+["05","Burp Suite Basics","Build the foundation for professional web testing.",["Introduction to Burp Suite","Initial configuration","Proxy","Repeater","Intruder","Decoder","Comparer","Sequencer","Core tools and features"],["Burp Suite Community Edition is sufficient to start; some features require Professional"]],
+["06","Advanced Burp Suite Usage","Improve workflows for larger and more complex applications.",["Advanced scanning concepts","Crawling techniques","Practical workflow optimization","Finding and organizing the attack surface","Reviewing captured traffic","Repeating and modifying requests"]],
+["07","OWASP Top 10","Understand major web application vulnerability classes.",["Overview of OWASP Top 10","Study each category in depth","Testing methodology","Impact analysis","Mitigation techniques"]],
+["08","Pentesting Approaches","Understand engagement models and their constraints.",["Black-box testing","White-box testing","Gray-box testing","Strategic pentesting methodologies","Choose an approach based on scope"]],
+["09","Pre-Penetration Process","Plan an engagement before technical testing begins.",["Gray-box engagement walkthrough","Scope understanding","Threat modeling","Document scope and requirements","Rules of engagement","Test boundaries"]],
+["10","Application Functionality Analysis","Understand intended application behavior before testing.",["Functional understanding","Application mapping","Workflow analysis","Test-case development for black-box testing","Test-case development for gray-box testing","Identify security-sensitive functionality"]],
+["11","Hands-On Application Testing","Apply testing points to real functionality in a lab.",["Hands-on application testing","Testing based on OWASP testing points","Input validation testing","Authentication and authorization testing","Session and state testing","Business workflow testing"]],
+["12","Finding Validation","Turn scanner output and observations into verified findings.",["Reviewing Burp Suite results","Identifying false positives","Verifying and validating findings","Evidence collection","Impact confirmation","Revalidation testing process"]],
+["13","API Penetration Testing","Test APIs from discovery through validation.",["Postman setup and Burp interception","Importing collections","Mapping endpoints","Fuzzing APIs in an authorized lab","Reviewing API documentation","OWASP API Security Top 10","Authentication and authorization testing","Input and business-logic testing"]],
+["14","White-Box Testing — Bonus","Use source code and repository information in security testing.",["Finding application repositories on GitHub","Understanding documentation","Local deployment","Source-code scanning","SonarQube","Semgrep","Manual code review with GitHub.dev","Identifying vulnerable versions","Using git blame","Reporting process"]],
+["15","Industry-Level Reporting","Communicate findings clearly and consistently.",["Industry-level report creation","Understanding CVSS scoring","Finding description","Steps to reproduce","Impact","Evidence","Remediation","Executive and technical reporting"]],
+["16","Hands-On Penetration Testing","Apply the complete methodology in a controlled environment.",["Hands-on penetration testing","Recon → mapping → testing → validation → reporting","End-to-end assessment workflow","Finding prioritization","Professional reporting"]]
+];
+const advanced=["JWT","XML injection / unsafe XML processing","Insecure deserialization","XPath injection","LDAP injection","NoSQL injection","OS command injection","HTTP request smuggling","Business logic vulnerabilities","Server-side template injection (SSTI)","Client-side template injection (CSTI)","Server-side request forgery (SSRF)","OAuth flow weaknesses","Authentication and session weaknesses","Race conditions","Client-side encryption bypass assumptions","LLM application security (OWASP LLM Top 10)","GraphQL security","WebSocket security","Prototype pollution","Cross-site scripting (XSS)","CORS misconfiguration","Broken access control / IDOR","File upload vulnerabilities","Web cache poisoning","Information disclosure","Host header injection","Path traversal, LFI and RFI"];
+const weeks=[
+["1–2","Fundamentals","Module 01 · security vocabulary, VA, VAPT and testing types"],
+["3–4","Web architecture","Module 02 · HTTP, browser, server, database and attack surface"],
+["5–6","Reconnaissance","Module 03 · passive/active recon and asset mapping in scope"],
+["7–8","Vulnerability assessment","Module 04 · scanning, validation, prioritization and tools"],
+["9–10","Burp Suite basics","Module 05 · proxy, repeater, intruder and request analysis"],
+["11–12","Advanced Burp Suite","Module 06 · crawling, scanning and workflow"],
+["13–15","OWASP Top 10","Module 07 · understand, test and mitigate each category"],
+["16","Pentesting approaches","Module 08 · black-, white- and gray-box"],
+["17","Pre-engagement","Module 09 · scope, rules and threat model"],
+["18","Application analysis","Module 10 · map workflows and sensitive functionality"],
+["19–21","Hands-on testing","Module 11 · test input, auth, access and business logic"],
+["22–23","Finding validation","Module 12 · verify, collect evidence and retest"],
+["24–26","API testing","Module 13 · endpoints, collections and API security"],
+["27–28","White-box testing","Module 14 · source review and SAST"],
+["29–30","Reporting","Module 15 · CVSS, evidence, impact and remediation"],
+["31–34","Full practical assessment","Module 16 · complete an authorized lab assessment"],
+["35–38","Advanced vulnerabilities","Advanced checklist · choose labs matching each topic"],
+["39–40","Assessment & portfolio","Review, final lab, report and publish sanitized notes"]
+];
+const resources=[
+["PortSwigger Web Security Academy","Free interactive web-security lessons and labs: SQLi, XSS, SSRF, access control, authentication, APIs and more.","https://portswigger.net/web-security","FREE TRAINING"],
+["OWASP Web Security Testing Guide","Structured professional methodology and test cases for web application security.","https://owasp.org/www-project-web-security-testing-guide/stable/","OPEN SOURCE"],
+["OWASP Juice Shop","Intentionally vulnerable web application for hands-on security challenges; run locally.","https://owasp.org/www-project-juice-shop/","OPEN SOURCE LAB"],
+["OWASP WebGoat","Guided lessons for learning common web application security flaws in a deliberately vulnerable app.","https://owasp.org/www-project-webgoat/","OPEN SOURCE LAB"],
+["OWASP ZAP","Free and open-source web application proxy/scanner for manual and automated testing.","https://www.zaproxy.org/","OPEN SOURCE TOOL"],
+["OWASP crAPI","Intentionally vulnerable API application for API security practice.","https://github.com/OWASP/crAPI","OPEN SOURCE LAB"],
+["MDN Web Docs","Learn HTML, CSS, JavaScript, HTTP and web fundamentals.","https://developer.mozilla.org/en-US/docs/Learn_web_development","FREE DOCUMENTATION"],
+["OWASP Top 10","Awareness document describing critical web application security risk categories.","https://owasp.org/www-project-top-ten/","FREE RESOURCE"],
+["OWASP API Security Top 10","API-specific security risks and explanations.","https://owasp.org/www-project-api-security/","FREE RESOURCE"],
+["Semgrep documentation","Static analysis and code-scanning documentation; useful for white-box testing.","https://semgrep.dev/docs/","COMMUNITY + PAID"],
+["Nuclei documentation","Template-based vulnerability scanner documentation. Use only on authorized targets.","https://docs.projectdiscovery.io/tools/nuclei/overview","FREE TOOL"],
+["Postman Learning Center","Learn API requests, collections, environments and testing workflows.","https://learning.postman.com/","FREE LEARNING"],
+["CVSS (FIRST)","Official Common Vulnerability Scoring System documentation and calculator resources.","https://www.first.org/cvss/","FREE STANDARD"],
+["GitHub Skills","Practical lessons for GitHub workflows and repository skills.","https://skills.github.com/","FREE LEARNING"]
+];
+
+const P="https://portswigger.net/web-security/",B="https://portswigger.net/burp/documentation/desktop/",W="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/",T="https://owasp.org/Top10/";
+const SUF=["VAPT","web application","reconnaissance pentest","vulnerability assessment","Burp Suite","Burp Suite","OWASP Top 10","penetration testing","penetration testing","penetration testing","web penetration testing","vulnerability validation pentest","API penetration testing","source code security review","pentest report","penetration testing"];
+const MS=[
+[["OWASP: Vulnerabilities","https://owasp.org/www-community/vulnerabilities/"],["PortSwigger Academy","https://portswigger.net/web-security"]],
+[["MDN: How HTTP works","https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"],["MDN: Learn web development","https://developer.mozilla.org/en-US/docs/Learn_web_development"]],
+[["WSTG: Information Gathering",W+"01-Information_Gathering/"]],
+[["OWASP ZAP","https://www.zaproxy.org/"],["WSTG methodology","https://owasp.org/www-project-web-security-testing-guide/stable/"]],
+[["Burp getting started",B+"getting-started"],["Burp tools",B+"tools"]],
+[["Burp documentation","https://portswigger.net/burp/documentation/desktop"]],
+[["OWASP Top 10","https://owasp.org/www-project-top-ten/"],["A01 Broken Access Control",T+"A01_2021-Broken_Access_Control/"],["A02 Cryptographic Failures",T+"A02_2021-Cryptographic_Failures/"],["A03 Injection",T+"A03_2021-Injection/"],["A04 Insecure Design",T+"A04_2021-Insecure_Design/"],["A05 Security Misconfiguration",T+"A05_2021-Security_Misconfiguration/"],["A06 Vulnerable Components",T+"A06_2021-Vulnerable_and_Outdated_Components/"],["A07 Auth Failures",T+"A07_2021-Identification_and_Authentication_Failures/"],["A08 Integrity Failures",T+"A08_2021-Software_and_Data_Integrity_Failures/"],["A09 Logging Failures",T+"A09_2021-Security_Logging_and_Monitoring_Failures/"],["A10 SSRF",T+"A10_2021-Server-Side_Request_Forgery_%28SSRF%29/"]],
+[["WSTG: Introduction","https://owasp.org/www-project-web-security-testing-guide/stable/"]],
+[["WSTG: Introduction","https://owasp.org/www-project-web-security-testing-guide/stable/"]],
+[["WSTG: Testing Guide","https://owasp.org/www-project-web-security-testing-guide/stable/"]],
+[["WSTG: Testing categories",W],["Practice: Juice Shop","https://owasp.org/www-project-juice-shop/"],["Practice: WebGoat","https://owasp.org/www-project-webgoat/"],["Practice: PortSwigger labs","https://portswigger.net/web-security/all-labs"]],
+[["Burp documentation","https://portswigger.net/burp/documentation/desktop"]],
+[["PortSwigger: API testing",P+"api-testing"],["OWASP API Top 10","https://owasp.org/API-Security/editions/2023/en/0x11-t10/"],["Postman Learning Center","https://learning.postman.com/"],["Practice: crAPI","https://github.com/OWASP/crAPI"]],
+[["Semgrep docs","https://semgrep.dev/docs/"],["SonarQube","https://www.sonarsource.com/products/sonarqube/"]],
+[["CVSS (FIRST)","https://www.first.org/cvss/"],["CVSS calculator","https://www.first.org/cvss/calculator/3.1"]],
+[["WSTG: Reporting","https://owasp.org/www-project-web-security-testing-guide/stable/5-Reporting/"],["Practice: PortSwigger labs","https://portswigger.net/web-security/all-labs"]]
+];
+const LK={
+"What is a vulnerability?":"https://owasp.org/www-community/vulnerabilities/",
+"HTTP request/response flow":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+"Proxy":B+"tools/proxy","Repeater":B+"tools/repeater","Intruder":B+"tools/intruder","Decoder":B+"tools/decoder","Comparer":B+"tools/comparer","Sequencer":B+"tools/sequencer",
+"Introduction to Burp Suite":B+"getting-started","Core tools and features":B+"tools",
+"Overview of OWASP Top 10":"https://owasp.org/www-project-top-ten/",
+"Types of reconnaissance":W+"01-Information_Gathering/","Passive reconnaissance techniques":W+"01-Information_Gathering/","Technology identification":W+"01-Information_Gathering/",
+"Input validation testing":W+"07-Input_Validation_Testing/","Authentication and authorization testing":W+"04-Authentication_Testing/","Session and state testing":W+"06-Session_Management_Testing/","Business workflow testing":W+"10-Business_Logic_Testing/",
+"OWASP Top 10":"https://owasp.org/www-project-top-ten/","OWASP API Security Top 10":"https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+"Postman setup and Burp interception":"https://learning.postman.com/","Mapping endpoints":P+"api-testing",
+"Finding application repositories on GitHub":"https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
+"Semgrep":"https://semgrep.dev/docs/","SonarQube":"https://www.sonarsource.com/products/sonarqube/","Using git blame":"https://git-scm.com/docs/git-blame",
+"Understanding CVSS scoring":"https://www.first.org/cvss/user-guide",
+"JWT":P+"jwt","XML injection / unsafe XML processing":P+"xxe","Insecure deserialization":P+"deserialization",
+"XPath injection":"https://owasp.org/www-community/attacks/XPATH_Injection","LDAP injection":"https://owasp.org/www-community/attacks/LDAP_Injection",
+"NoSQL injection":P+"nosql-injection","OS command injection":P+"os-command-injection","HTTP request smuggling":P+"request-smuggling",
+"Business logic vulnerabilities":P+"logic-flaws","Server-side template injection (SSTI)":P+"server-side-template-injection",
+"Client-side template injection (CSTI)":P+"cross-site-scripting/contexts/client-side-template-injection",
+"Server-side request forgery (SSRF)":P+"ssrf","OAuth flow weaknesses":P+"oauth","Authentication and session weaknesses":P+"authentication",
+"Race conditions":P+"race-conditions","LLM application security (OWASP LLM Top 10)":P+"llm-attacks","GraphQL security":P+"graphql",
+"WebSocket security":P+"websockets","Prototype pollution":P+"prototype-pollution","Cross-site scripting (XSS)":P+"cross-site-scripting",
+"CORS misconfiguration":P+"cors","Broken access control / IDOR":P+"access-control/idor","File upload vulnerabilities":P+"file-upload",
+"Web cache poisoning":P+"web-cache-poisoning","Information disclosure":P+"information-disclosure","Host header injection":P+"host-header",
+"Path traversal, LFI and RFI":P+"file-path-traversal"
+};
+function lk(l,i){return LK[l]||"https://www.google.com/search?q="+encodeURIComponent(l+" "+(i>=0?SUF[i]:"web security")+" tutorial")}
+function item(label,id,url){return `<div class="check"><input type="checkbox" id="c-${id}" data-id="${id}" onchange="saveState()"><label for="c-${id}">${label}</label>${url?`<a class="learn" href="${url}" target="_blank" rel="noopener noreferrer">Learn ↗</a>`:""}</div>`}
+document.getElementById("weeks").innerHTML=weeks.map((w,i)=>`<article class="week"><div class="weekhead"><b>W${String(i+1).padStart(2,"0")}</b><h3>${w[1]}</h3></div><p><b>${w[0]} weeks</b> · ${w[2]}</p></article>`).join("");
+document.getElementById("moduleList").innerHTML=modules.map((m,i)=>`<details class="module"><summary><span class="num">${m[0]}</span><div style="flex:1"><h3>${m[1]}</h3><p class="desc">${m[2]}</p></div><span class="muted">＋</span></summary><div class="modulebody">${MS[i]?`<div class="start"><b>Start here:</b> ${MS[i].map(r=>`<a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a>`).join("")}</div>`:""}<div class="checks">${m[3].map((x,j)=>item(x,`m${i}-${j}`,lk(x,i))).join("")}</div>${m[4]?`<p class="tools">${m[4].join(" · ")}</p>`:""}</div></details>`).join("");
+document.getElementById("advancedList").innerHTML=advanced.map((x,i)=>item(x,`a${i}`,lk(x,-1))).join("");
+const finals=["Explain a vulnerability clearly and accurately","Complete practical labs without copying a walkthrough","Show the request/response evidence for a finding","Explain realistic impact and severity","Recommend a practical remediation","Retest to confirm the fix","Write a professional report with executive summary and technical detail","Publish sanitized lab notes/scripts in a portfolio (no secrets or real target data)"];
+document.getElementById("finalList").innerHTML=finals.map((x,i)=>item(x,`f${i}`)).join("");
+const KEY="sy3d_websec_training_v1";
+function saveState(){let s={};document.querySelectorAll("input[data-id]").forEach(x=>s[x.dataset.id]=x.checked);localStorage.setItem(KEY,JSON.stringify(s));updateStats()}
+function loadState(){try{let s=JSON.parse(localStorage.getItem(KEY)||"{}");document.querySelectorAll("input[data-id]").forEach(x=>x.checked=!!s[x.dataset.id])}catch(e){}updateStats()}
+function updateStats(){let a=[...document.querySelectorAll("input[data-id]")],n=a.filter(x=>x.checked).length,p=a.length?Math.round(n/a.length*100):0;document.getElementById("doneCount").textContent=n;document.getElementById("totalCount").textContent=a.length;document.getElementById("percent").textContent=p+"%";document.getElementById("progressBar").style.width=p+"%";document.getElementById("progressText").textContent=p===100?"All checklist items completed. Review and keep practising.":`${n} of ${a.length} checklist items completed.`}
+function exportProgress(){let blob=new Blob([JSON.stringify({version:1,progress:JSON.parse(localStorage.getItem(KEY)||"{}")},null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="sy3d-websec-progress.json";a.click();URL.revokeObjectURL(a.href)}
+function importProgress(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);localStorage.setItem(KEY,JSON.stringify(d.progress||d));loadState();alert("Progress imported.")}catch(err){alert("That file is not a valid progress backup.")}};r.readAsText(f);e.target.value=""}
+function resetProgress(){if(confirm("Reset every completed checkbox? Export a backup first if you want to keep your progress.")){localStorage.removeItem(KEY);loadState()}}
+document.getElementById("resourceList").innerHTML=resources.map(r=>`<article class="card resource"><span class="tag">${r[3]}</span><h3>${r[0]}</h3><p>${r[1]}</p><a href="${r[2]}" target="_blank" rel="noopener noreferrer">Open official resource ↗</a></article>`).join("");
+loadState();
+</script>
+</body></html>
